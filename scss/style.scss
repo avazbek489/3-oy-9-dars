@@ -1,0 +1,153 @@
+@import url("../css/fonts.css");
+@import url("../css/normalize.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5 ease;
+}
+
+li {
+  list-style: none;
+  color: red($color: #000000);
+}
+
+// HEADER QISMI
+.header {
+  margin-bottom: 140px;
+  margin-top: 20px;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    .header-right__next {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      width: 133px;
+      height: 60px;
+      background-color: #ec6c21;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.36px;
+      text-align: left;
+      color: #fff;
+    }
+  }
+}
+
+.header-right__nav ul {
+  display: flex;
+  gap: 30px;
+
+  a {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    color: #002959;
+  }
+}
+
+// HERO QISMI
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+
+  h1 {
+    font-family: "Inter";
+    font-size: 61px;
+    font-weight: 600;
+    line-height: 70px;
+    text-align: center;
+    color: #002959;
+
+    width: 982px;
+    height: 114px;
+  }
+
+  p {
+    text-transform: capitalize;
+
+    font-family: "Inter";
+    font-size: 19.3px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    color: #002959;
+    width: 550px;
+    height: 42px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    border: none;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    color: #fff;
+
+    width: 266px;
+    height: 60px;
+    background-color: #ec6c21;
+  }
+}
+
+.hero-bot{
+    margin-top: -200px;
+
+    background-image: url("../images/Bac-img.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 1240px 600px;
+}
+
+.hero__container{
+    position: relative;
+}
+
+
