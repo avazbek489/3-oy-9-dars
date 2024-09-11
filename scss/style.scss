@@ -15,9 +15,16 @@
   padding: 0 20px;
 }
 
+// ANIMATSIYA
+
+
+
 a {
   text-decoration: none;
   transition: all 0.5 ease;
+  &:hover{
+    text-decoration: underline solid black;
+  }
 }
 
 li {
@@ -60,7 +67,7 @@ li {
       justify-content: center;
       border: none;
 
-      font-family: Inter;
+      font-family: "Inter";
       font-size: 16px;
       font-weight: 500;
       line-height: 19.36px;
@@ -92,7 +99,14 @@ li {
   align-items: center;
   gap: 45px;
 
+//  background-image: url("../images/img-left.png");
+ 
+//  background-image: url("../images/img-right.png");
+
   h1 {
+    text-transform: capitalize;
+
+
     font-family: "Inter";
     font-size: 61px;
     font-weight: 600;
@@ -135,6 +149,25 @@ li {
     height: 60px;
     background-color: #ec6c21;
   }
+}
+
+.center-images{
+  position: relative;
+  
+img{
+  position: absolute;
+}
+
+  .img-left{
+bottom: 30px;
+right: 220px;
+  }
+
+  .img-right{
+    bottom: 135px;
+    // right: 0px;
+    left: 320px;
+      }
 }
 
 .hero-bot{
