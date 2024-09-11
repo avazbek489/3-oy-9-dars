@@ -1,81 +1,120 @@
 @import url("../css/fonts.css");
 @import url("../css/normalize.css");
 
+// Variables
+$primary-color: #ec6c21;
+$secondary-color: #002959;
+$text-color: #fff;
+$font-family: "Inter";
+$container-max-width: 1440px;
+$container-padding: 20px;
+
+// Mixin
+@mixin button-styles($bg-color, $text-color) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  color: $text-color;
+  background-color: $bg-color;
+  width: 133px;
+  height: 60px;
+}
+
+// Extend
+%base-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+}
+
+@import url("../css/fonts.css");
+@import url("../css/normalize.css");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: $font-family;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: $container-max-width;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 $container-padding;
 }
 
 // ANIMATSIYA
-
-
-
 a {
   text-decoration: none;
-  transition: all 0.5 ease;
-  &:hover{
+  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+  &:hover {
     text-decoration: underline solid black;
+    color: $primary-color;
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+img {
+  &:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    backdrop-filter: blur(1px);
+  }
+}
+
+button {
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
 
 li {
   list-style: none;
-  color: red($color: #000000);
+  color: $secondary-color;
 }
 
 // HEADER QISMI
 .header {
   margin-bottom: 140px;
   margin-top: 20px;
-}
 
-.header__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .header-right {
+  .header__container {
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: space-between;
 
-    .header-right__next {
+    .header-right {
       display: flex;
       align-items: center;
       gap: 40px;
-    }
 
-    button {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      .header-right__next {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
 
-      width: 133px;
-      height: 60px;
-      background-color: #ec6c21;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-
-      font-family: "Inter";
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 19.36px;
-      text-align: left;
-      color: #fff;
-
-      &:hover{
-        background-color: #ec6c21;
+      button {
+        @include button-styles($primary-color, $text-color);
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
       }
     }
   }
@@ -86,105 +125,79 @@ li {
   gap: 30px;
 
   a {
-    font-family: "Inter";
+    font-family: $font-family;
     font-size: 16px;
     font-weight: 500;
     line-height: 19.36px;
     text-align: left;
-    color: #002959;
+    color: $secondary-color;
   }
 }
 
 // HERO QISMI
-
 .hero__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 45px;
 
-//  background-image: url("../images/img-left.png");
- 
-//  background-image: url("../images/img-right.png");
-
   h1 {
     text-transform: capitalize;
-
-
-    font-family: "Inter";
+    font-family: $font-family;
     font-size: 61px;
     font-weight: 600;
     line-height: 70px;
     text-align: center;
-    color: #002959;
-
+    color: $secondary-color;
     width: 982px;
     height: 114px;
   }
 
   p {
     text-transform: capitalize;
-
-    font-family: "Inter";
+    font-family: $font-family;
     font-size: 19.3px;
     font-weight: 400;
     line-height: 28px;
     text-align: center;
-    color: #002959;
+    color: $secondary-color;
     width: 550px;
     height: 42px;
   }
 
   button {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    justify-content: center;
-    border: none;
-
-    font-family: "Inter";
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.36px;
-    text-align: left;
-    color: #fff;
-
+    @include button-styles($primary-color, $text-color);
     width: 266px;
     height: 60px;
-    background-color: #ec6c21;
   }
 }
 
-.center-images{
+.center-images {
   position: relative;
-  
-img{
-  position: absolute;
-}
 
-  .img-left{
-bottom: 30px;
-right: 220px;
+  img {
+    position: absolute;
   }
 
-  .img-right{
+  .img-left {
+    bottom: 30px;
+    right: 220px;
+  }
+
+  .img-right {
     bottom: 135px;
-    // right: 0px;
     left: 320px;
-      }
+  }
 }
 
-.hero-bot{
-    margin-top: -200px;
-
-    background-image: url("../images/Bac-img.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 1240px 600px;
+.hero-bot {
+  margin-top: -200px;
+  background-image: url("../images/Bac-img.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 1240px 600px;
 }
 
-.hero__container{
-    position: relative;
+.hero__container {
+  position: relative;
 }
-
-
