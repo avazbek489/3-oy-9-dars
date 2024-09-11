@@ -73,6 +73,10 @@ li {
       line-height: 19.36px;
       text-align: left;
       color: #fff;
+
+      &:hover{
+        background-color: #ec6c21;
+      }
     }
   }
 }
